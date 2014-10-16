@@ -4,7 +4,7 @@ require "actionback/version"
 
 Gem::Specification.new do |s|
   s.name        = "actionback"
-  s.version     = Actionback::VERSION
+  s.version     = ActionBack::VERSION
   s.authors     = ["Ari Summer"]
   s.email       = ["aribsummer@gmail.com"]
   s.homepage    = "https://github.com/sweatshirtio/actionback"

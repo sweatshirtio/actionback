@@ -1,2 +1,1 @@
-module Actionback
-end
+require 'actionback/acronym'
