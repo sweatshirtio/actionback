@@ -1,5 +1,6 @@
 actionback
 ==========
+[![Circle CI](https://circleci.com/gh/sweatshirtio/actionback.png?style=badge)](https://circleci.com/gh/sweatshirtio/actionback)
 
 `Action Pack` now has **BACK!**
 
