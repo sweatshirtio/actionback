@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "actionback/version"
 
 Gem::Specification.new do |s|
-  s.name        = "actionback"
+  s.name        = 'actionback'
   s.version     = ActionBack::VERSION
   s.authors     = ["Ari Summer"]
   s.email       = ["aribsummer@gmail.com"]
@@ -18,4 +18,5 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4.1.6"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rspec"
 end
