@@ -3,12 +3,12 @@ module ActionBack
     extend ActiveSupport::Concern
 
     module ClassMethods
-      def fetch_resource_id(reg_match, route_wrapper)
-        reg_match[route_wrapper.parts.index(:id) + 1].to_i
+      def fetch_resource_id(route_params)
+        route_params[:id]
       end
 
-      def fetch_resource(reg_match, route_wrapper)
-        resource_id = fetch_resource_id reg_match, route_wrapper
+      def fetch_resource(route_params)
+        resource_id = fetch_resource_id route_params
         controller_name.classify.constantize.find resource_id
       end
     end
