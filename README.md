@@ -1,6 +1,6 @@
 actionback
 ==========
-[![Circle CI](https://circleci.com/gh/sweatshirtio/actionback.png?style=badge)](https://circleci.com/gh/sweatshirtio/actionback)
+[![Build Status](https://travis-ci.org/sweatshirtio/actionback.svg?branch=master)](https://travis-ci.org/sweatshirtio/actionback)
 
 `Action Pack` now has **BACK!**
 
