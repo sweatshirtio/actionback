@@ -128,5 +128,5 @@ PLATFORMS
 DEPENDENCIES
   actionback!
   guard-rspec
-  rails (~> 4.1.6, >= 0)
+  rails (>= 3.2.0)
   rspec (~> 3.1.0)
