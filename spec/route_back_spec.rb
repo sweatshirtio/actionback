@@ -15,10 +15,8 @@ describe ActionBack::RouteBack do
         resources :users
       end
 
-      error_msg = 'No route matches "http://www.yo.com"'
-
       expect{ subject.id_from_url 'http://www.yo.com' }
-        .to raise_error(ActionController::RoutingError, error_msg)
+        .to raise_error(ActionController::RoutingError)
     end
 
     it 'should raise ActionController::RoutingError: missing controller' do
@@ -26,13 +24,8 @@ describe ActionBack::RouteBack do
         get '/ello_there' => 'ello_there#show'
       end
 
-      error_msg = <<-EOS.gsub(/^[\s\t]*/, '').gsub(/[\s\t]*\n/, ' ').strip
-        A route matches "http://www.ello.com/ello_there",
-        but references missing controller: ElloThereController
-      EOS
-
       expect{ subject.id_from_url 'http://www.ello.com/ello_there' }
-        .to raise_error(ActionController::RoutingError, error_msg)
+        .to raise_error(ActionController::RoutingError)
     end
 
     context 'non-nested routes' do
@@ -109,10 +102,8 @@ describe ActionBack::RouteBack do
         resources :users
       end
 
-      error_msg = 'No route matches "http://www.yoyo.com"'
-
       expect{ subject.resource_from_url 'http://www.yoyo.com' }
-        .to raise_error(ActionController::RoutingError, error_msg)
+        .to raise_error(ActionController::RoutingError)
     end
 
     it 'should raise ActionController::RoutingError: missing controller' do
@@ -120,13 +111,8 @@ describe ActionBack::RouteBack do
         get '/ello_there_mate' => 'ello_there_mate#show'
       end
 
-      error_msg = <<-EOS.gsub(/^[\s\t]*/, '').gsub(/[\s\t]*\n/, ' ').strip
-        A route matches "http://www.ello.com/ello_there_mate",
-        but references missing controller: ElloThereMateController
-      EOS
-
       expect{ subject.resource_from_url 'http://www.ello.com/ello_there_mate' }
-        .to raise_error(ActionController::RoutingError, error_msg)
+        .to raise_error(ActionController::RoutingError)
     end
 
     context 'non-nested routes' do
