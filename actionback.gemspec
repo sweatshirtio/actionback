@@ -12,8 +12,9 @@ Gem::Specification.new do |s|
   s.description = 'Deserialize URLs to resources or resource IDs. Great for Hypermedia APIs.'
   s.license     = 'MIT'
 
-  s.files = Dir["{app,config,db,lib}/**/*", 'MIT-LICENSE', 'Rakefile', 'README.md']
-  s.test_files = Dir['spec/**/*']
+  s.files       = `git ls-files -- lib/*`.split("\n")
+  s.files      += %w[README.md MIT-LICENSE]
+  s.test_files  = []
 
   s.add_dependency "rails"
 
