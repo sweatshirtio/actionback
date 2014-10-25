@@ -126,6 +126,29 @@ describe ActionBack::RouteBack do
 
         subject.resource_from_url 'http://www.example.com/users/1'
       end
+
+      context 'malicious resources' do
+        let(:account_info) { { name: 'Jon Smith', account_number: 4528394 } }
+
+        before do
+          route_set.draw do
+            resources :users
+            resources :bank_accounts
+          end
+
+          allow(BankAccount).to receive(:find) { account_info }
+        end
+
+        it 'should not return resource of protected resource' do
+          expect(subject.resource_from_url 'http://example.com/bank_accounts/1')
+            .to_not eq account_info
+        end
+
+        it 'should not raise honor controller authentications' do
+          expect{ subject.resource_from_url 'http://example.com/bank_accounts/1' }
+            .to raise_error 'This is a protected resource!'
+        end
+      end
     end
 
     context 'namespaced routes' do
