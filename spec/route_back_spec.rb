@@ -144,7 +144,7 @@ describe ActionBack::RouteBack do
             .to_not eq account_info
         end
 
-        it 'should not raise honor controller authentications' do
+        it 'should honor controller callbacks' do
           expect{ subject.resource_from_url 'http://example.com/bank_accounts/1' }
             .to raise_error 'This is a protected resource!'
         end
