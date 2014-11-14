@@ -66,7 +66,7 @@ to be passed in as the value for the user property.  `AwesomeRepresenter` will t
 Controllers are inferred in actionback via rails routes.  They are called on to return the classified resource or resource ID.  You will need to include `ActionBack::ControllerAdditions` in the relevant controllers.
 
 ```ruby
-class AwesomeController < ApplicationController
+class UserController < ApplicationController
   include ActionBack::ControllerAdditions
 end
 ```
