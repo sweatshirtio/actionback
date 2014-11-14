@@ -1,6 +1,6 @@
 actionback
 ==========
-[![Build Status](https://travis-ci.org/sweatshirtio/actionback.svg?branch=master)](https://travis-ci.org/sweatshirtio/actionback)
+[![Build Status](https://travis-ci.org/sweatshirtio/actionback.svg?branch=master)](https://travis-ci.org/sweatshirtio/actionback) [![Gem Version](https://badge.fury.io/rb/actionback.svg)](http://badge.fury.io/rb/actionback)
 
 `Action Pack` can now go **BACK!**
 
