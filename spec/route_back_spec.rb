@@ -9,6 +9,16 @@ describe ActionBack::RouteBack do
     end.new
   end
 
+  describe '#match_path' do
+    it 'raises ActionBack::RouteBack::RoutingError not a valid URL' do
+      allow(ENV).to receive(:[])
+      allow(ENV).to receive(:[]).with('DOMAIN_NAME').and_return 'example.com'
+
+      expect{ subject.match_path 'http://www.yo.com' }
+        .to raise_error(ActionBack::RouteBack::RoutingError, 'not a valid URL')
+    end
+  end
+
   describe '#id_from_url' do
     it 'should raise ActionController::RoutingError: no route match' do
       route_set.draw do
