@@ -1,6 +1,15 @@
 module ActionBack
   module RouteBack
+    class RoutingError < StandardError
+    end
+
     def match_path(path)
+      if ENV['DOMAIN_NAME']
+        if URI(path).host != ENV['DOMAIN_NAME']
+          raise ActionBack::RouteBack::RoutingError, 'not a valid URL'
+        end
+      end
+
       Rails.application.routes.recognize_path path
     end
 
